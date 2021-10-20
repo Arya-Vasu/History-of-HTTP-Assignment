@@ -1,18 +1,4 @@
-# History-of-HTTP-Assignment
-
-HTTP (HyperText Transfer Protocol) is the underlying protocol of the World Wide Web. Developed by Tim Berners-Lee and his team between 1989-1991, HTTP has seen many changes, keeping most of the simplicity and further shaping its flexibility. HTTP has evolved from an early protocol to exchange files in a semi-trusted laboratory environment, to the modern maze of the Internet, now carrying images, videos in high resolution and 3D.
-
-## HTTP/0.9 - The One-line Protocol
-
-The initial version of HTTP had no version number; it has been later called 0.9 to differentiate it from the later versions. HTTP/0.9 is extremely simple: requests consist of a single line and start with the only possible method GET followed by the path to the resource (not the URL as both the protocol, server, and port are unnecessary once connected to the server). **GET /mypage.html**
-
-The response is extremely simple too: it only consisted of the file itself.
-
-<HTML>
-A very simple HTML page
-</HTML>
-
-Unlike subsequent evolutions, there were no HTTP headers, meaning that only HTML files could be transmitted, but no other type of documents. There were no status or error codes: in case of a problem, a specific HTML file was sent back with the description of the problem contained in it, for human consumption.
+# Difference between HTTP 1 and HTTP 2 :
 
 ## HTTP/1.0 – Building extensibility
 
@@ -113,5 +99,33 @@ The introduction of Client-Hints allows the browser, or client, to proactively c
 The introduction of security-related prefixes in the Cookie header, now helps guarantee a secure cookie has not been altered.
 This evolution of HTTP proves its extensibility and simplicity, liberating creation of many applications and compelling the adoption of the protocol. The environment in which HTTP is used today is quite different from that seen in the early 1990s. HTTP's original design proved to be a masterpiece, allowing the Web to evolve over a quarter of a century, without the need of a mutiny. By healing flaws, yet retaining the flexibility and extensibility which made HTTP such a success, the adoption of HTTP/2 hints at a bright future for the protocol.
 
-## HTTP/3 - HTTP over QUIC
 
+# Objects and its Internal representation in Javascript :
+  
+Objects and its Internal Representation in Javascript. Objects are the representation of real-world entities in any language representing things by defining its properties along with their values. In Javascript, objects may be defined as an unordered collection of related data, of primitive or reference types, in the form of “key: value” pairs.
+  
+  An object is a collection of properties, and a property is an association between a name (or key) and a value. A property’s value can be a function, in which case the property is known as a method.
+A JavaScript object has properties associated with it. A property of an object can be explained as a variable that is attached to the object. Object properties are basically the same as ordinary JavaScript variables, except for the attachment to objects. The properties of an object define the characteristics of the object. We can access the properties of an object with a simple dot-notation:
+  objectName.propertyName
+Like all JavaScript variables, both the object name (which could be a normal variable) and property name are case sensitive. You can define a property by assigning it a value. For example, let’s create an object named myCar and give it properties named make, model, and year as follows:
+var myCar = new Object();
+myCar.make = ‘Ford’;
+myCar.model = ‘Mustang’;
+myCar.year = 1969;
+The above example could also be written using an object initializer, which is a comma-delimited list of zero or more pairs of property names and associated values of an object, enclosed in curly braces ({}):
+var myCar = {
+make: ‘Ford’,
+model: ‘Mustang’,
+year: 1969
+};
+  
+## JavaScript’s internal representation of Objects:
+A simple diagram is probably the best way to give a quick overview of the object representation in Javascript.
+
+Most objects contain all their properties in a single block of memory (‘a’ and ‘b’). All blocks of memory have a pointer to a map, which describes their structure.
+Named properties that don’t fit in an object are usually stored in an overflow array (‘c’ and ‘d’).
+Numbered properties are stored separately, usually in a contiguous array.
+The JavaScript standard allows developers to define objects in a very flexible way, and it is hard to come up with an efficient representation that works for everything. An object is essentially a collection of properties: basically key-value pairs. We can access properties using two different kinds of expressions:
+obj.prop
+obj[“prop”]
+According to the spec, property names are always strings. If we use a name that is not a string, it is implicitly converted to a string. This may be a little surprising: if we use a number as a property name, it gets converted to a string as well. So a JavaScript object is basically a map from strings to values.
