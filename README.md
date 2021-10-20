@@ -105,18 +105,31 @@ This evolution of HTTP proves its extensibility and simplicity, liberating creat
 Objects and its Internal Representation in Javascript. Objects are the representation of real-world entities in any language representing things by defining its properties along with their values. In Javascript, objects may be defined as an unordered collection of related data, of primitive or reference types, in the form of “key: value” pairs.
   
   An object is a collection of properties, and a property is an association between a name (or key) and a value. A property’s value can be a function, in which case the property is known as a method.
+  
 A JavaScript object has properties associated with it. A property of an object can be explained as a variable that is attached to the object. Object properties are basically the same as ordinary JavaScript variables, except for the attachment to objects. The properties of an object define the characteristics of the object. We can access the properties of an object with a simple dot-notation:
-  objectName.propertyName
+  
+### objectName.propertyName :
+  
 Like all JavaScript variables, both the object name (which could be a normal variable) and property name are case sensitive. You can define a property by assigning it a value. For example, let’s create an object named myCar and give it properties named make, model, and year as follows:
+  
 var myCar = new Object();
+  
 myCar.make = ‘Ford’;
+  
 myCar.model = ‘Mustang’;
+  
 myCar.year = 1969;
+  
 The above example could also be written using an object initializer, which is a comma-delimited list of zero or more pairs of property names and associated values of an object, enclosed in curly braces ({}):
+  
 var myCar = {
+  
 make: ‘Ford’,
+  
 model: ‘Mustang’,
+  
 year: 1969
+  
 };
   
 ## JavaScript’s internal representation of Objects:
